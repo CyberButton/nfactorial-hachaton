@@ -20,7 +20,7 @@ radius = 1.0
 
 @app.route("/")
 def home():
-    return jsonify(message="Hello, Flask!")
+    return render_template("map.html")
 
 
 @app.route("/danger_level", methods=["GET"])
