@@ -41,11 +41,13 @@
         map.on('load', function () {
             map.addSource('points', {
                 'type': 'geojson',
-                'data': 'response.geojson', // replace with the path to your GeoJSON file if it's hosted, or use a JS object
+                'data': '/response.geojson',
                 'cluster': true,
                 'clusterRadius': 50,
                 'clusterMaxZoom': 14,
             });
+            // Add the rest of your layers here
+
 
             map.addLayer({
                 'id': 'clusters',
@@ -98,7 +100,9 @@
                     'circle-stroke-color': '#fff'
                 }
             });
+
         });
+
     </script>
 </body>
 

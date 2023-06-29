@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template, send_from_directory
 import geopandas as gpd
 from shapely.geometry import Point
 from sklearn.neighbors import BallTree
@@ -21,6 +21,11 @@ radius = 1.0
 @app.route("/")
 def home():
     return render_template("map.html")
+
+
+@app.route("/response.geojson")
+def serve_geojson():
+    return send_from_directory(".", "response.geojson")
 
 
 @app.route("/danger_level", methods=["GET"])
